@@ -258,6 +258,141 @@ weapon_abilities(smg, [low_damage]).
 weapon_abilities(sapper, [sap]).
 weapon_abilities(invisibility_watch, [invisibility]).
 
+% weapon-provided abilities (variations)
+weapon_abilities(shortstop, [quick_reload, push]).
+weapon_abilities(soda_popper, [quick_reload, infinite_jump]).
+weapon_abilities(baby_face_blaster, [acceleration]).
+weapon_abilities(backscatter, [minicrit_on_backshot]).
+weapon_abilities(force_a_nature, [quick_reload, knockback]).
+weapon_abilities(winger, [increased_jump]).
+weapon_abilities(pppp, [lifesteal, low_damage]).
+weapon_abilities(flying_guillotine, [throwable, bleeding]).
+weapon_abilities(bonk_atomic_punch, [temporary_invincibility]).
+weapon_abilities(crit_a_cola, [minicrits]).
+weapon_abilities(mad_milk, [lifesteal]).
+weapon_abilities(sandman, [stun, low_damage]).
+weapon_abilities(candy_cane, [lifesteal]).
+weapon_abilities(boston_basher, [self-damage, bleeding]).
+weapon_abilities(sun_on_a_stick, [lifesteal, fire_damage]).
+weapon_abilities(fan_o_war, [low_damage, death_mark]).
+weapon_abilities(atomizer, [triple_jump, low_damage]).
+weapon_abilities(wrap_assasin, [silent, bleeding]).
+weapon_abilities(direct_hit, [minicrits, high_damage, projectiles]).
+weapon_abilities(black_box, [lifesteal, projectiles, blast_damage]).
+weapon_abilities(rocket_jumper, [no_damage]).
+weapon_abilities(liberty_launcher, [minicrits, knockback, low_damage, projectiles, blast_damage]).
+weapon_abilities(beggars_bazooka, [accumulation, projectiles, blast_damage]).
+weapon_abilities(cow_mangler_5000, [infinite_ammo, overcharge, projectiles, damage_to_buildings, blast_damage, fire_damage]).
+weapon_abilities(air_strike, [carpet_bomber, blast_damage]).
+weapon_abilities(reserve_shooter, [faster_draw, minicrits]).
+weapon_abilities(buff_banner, [team_damage_boost]).
+weapon_abilities(gun_boats, [reduced_explosive_damage]).
+weapon_abilities(battallons_backup, [team_resistance_boost]).
+weapon_abilities(concheror, [team_speed_and_health_boost]).
+weapon_abilities(mantreads, [explosive_jump_reduction, air_control]).
+weapon_abilities(righteous_bison, [infinite_ammo, armor_penetration, low_damage]).
+weapon_abilities(base_jumper, [no_damage, flight, air_control]).
+weapon_abilities(panic_attack, [burst_shot]).
+weapon_abilities(equalizer, [high_damage]).
+weapon_abilities(pain_train, [capture_rate]).
+weapon_abilities(half_zatoichi, [lifesteal, force_melee]).
+weapon_abilities(disciplinary_action, [speed_boost]).
+weapon_abilities(market_gardener, [minicrits]).
+weapon_abilities(escape_plan, [speed_boost]).
+weapon_abilities(backburner, [fire_damage, airblast, minicrit_on_backshot]).
+weapon_abilities(degreaser, [fire_damage, airblast, faster_draw]).
+weapon_abilities(phlogistonator, [fire_damage, crits]).
+weapon_abilities(dragons_fury, [fire_damage, airblast, fireball]).
+weapon_abilities(flare_gun, [fire_damage, crits]).
+weapon_abilities(detonator, [fire_damage, minicrits, remote_detonation]).
+weapon_abilities(manmelter, [fire_damage]).
+weapon_abilities(scorch_shot, [fire_damage, blast_damage]).
+weapon_abilities(thermal_thruster, [flight, knockback]).
+weapon_abilities(gas_passer, [ingition]).
+weapon_abilities(axtinguisher, [minicrits]).
+weapon_abilities(postal_pummeler, []).
+weapon_abilities(homewrecker, [unsap]).
+weapon_abilities(powerjack, [speed, lifesteal]).
+weapon_abilities(back_scratcher, [high_damage]).
+weapon_abilities(sharpened_volcano_fragment, [fire_damage]).
+weapon_abilities(third_degree, [chaining]).
+weapon_abilities(neon_annihilator, [crits]).
+weapon_abilities(hot_hand, [acceleration, fire_damage]).
+weapon_abilities(loch_n_load, [damage_to_buildings, projectiles]).
+weapon_abilities(bootlegger, [boots]).
+weapon_abilities(loose_cannon, [minicrits, knockback, remote_detonation, projectiles]).
+weapon_abilities(iron_bomber, [projectiles, no_roll, blast_damage]).
+weapon_abilities(scottish_resistance, [projectiles, blast_damage, remote_detonation]).
+weapon_abilities(chargin_targe, [charge, slam, crits]).
+weapon_abilities(sticky_jumper, [no_damage]).
+weapon_abilities(splendid_screen, [charge, slam, crits]).
+weapon_abilities(tide_turner, [charge, charge_control, minicrits]).
+weapon_abilities(quickiebomb_launcher, [remote_detonation, blast_damage, projectiles]).
+weapon_abilities(eyelander, [heads, speed]).
+weapon_abilities(scotsmans_skullcutter, [high_damage]).
+weapon_abilities(claidheamh_mor, [increased_charge_time, charge_control]).
+weapon_abilities(persian_persuader, [charge_recharge]).
+weapon_abilities(natasha, [slow]).
+weapon_abilities(brass_beast, [high_damage]).
+weapon_abilities(tomislav, [silent]).
+weapon_abilities(huo_long_heater, [fire_damage]).
+weapon_abilities(family_business, [high_damage, burst_shot]).
+weapon_abilities(sandwich, [heal]).
+weapon_abilities(dalokohs_bar, [increase_max_hp, heal]).
+weapon_abilities(buffalo_steak, [minicrits, force_melee]).
+weapon_abilities(second_banana, [heal]).
+weapon_abilities(kgb, [crits, high_damage]).
+weapon_abilities(gru, [speed]).
+weapon_abilities(warriors_spirit, [high_damage]).
+weapon_abilities(fists_of_steel, [damage_resistance]).
+weapon_abilities(eviction_notice, [speed]).
+weapon_abilities(holiday_punch, [stun]).
+weapon_abilities(frontier_justice, [crits, burst_shot]).
+weapon_abilities(widowmaker, [burst_shot, infinite_ammo, no_reload]).
+weapon_abilities(pomson_6000, [projectiles]).
+weapon_abilities(rescue_ranger, [repair, projectiles]).
+weapon_abilities(wrangler, [manual_control]).
+weapon_abilities(short_circuit, [projectile_destruction]).
+weapon_abilities(gunslinger, [mini_sentry, construction_speed]).
+weapon_abilities(southern_hospitality, [bleeding]).
+weapon_abilities(jag, [construction_speed]).
+weapon_abilities(eureka_effect, [teleport]).
+weapon_abilities(blutsauger, [lifesteal, low_damage]).
+weapon_abilities(crusaders_crossbow, [heal]).
+weapon_abilities(overdose, [speed_boost]).
+weapon_abilities(kritzkrieg, [crits]).
+weapon_abilities(quick_fix, [faster_healing]).
+weapon_abilities(vaccinator, [blast_resistance, fire_resistance, bullet_resistance]).
+weapon_abilities(ubersaw, [faster_charge_rate]).
+weapon_abilities(vitasaw, [faster_charge_rate]).
+weapon_abilities(amputator, [heal]).
+weapon_abilities(solemn_vow, [show_health]).
+weapon_abilities(huntsman, [charged_shot, projectiles]).
+weapon_abilities(sydney_sleeper, [charged_shot, minicrits, zoom, death_mark]).
+weapon_abilities(bazaar_bargain, [charged_shot, zoom]).
+weapon_abilities(machina, [high_damage, zoom, charged_shot]).
+weapon_abilities(hitmans_heatmaker, [zoom, charged_shot]).
+weapon_abilities(classic, [charged_shot]).
+weapon_abilities(cleaners_carbine, [low_damage]).
+weapon_abilities(jarate, [death_mark]).
+weapon_abilities(razorback, [backstab_resistance]).
+weapon_abilities(cozy_camper, [heal]).
+weapon_abilities(dds, [fire_resistance]).
+weapon_abilities(shiv, [bleeding]).
+weapon_abilities(bushwacka, [crits]).
+weapon_abilities(shahanshah, [high_damage]).
+weapon_abilities(ambassador, [headshot]).
+weapon_abilities(letranger, [longer_invisibility]).
+weapon_abilities(enforcer, [high_damage]).
+weapon_abilities(diamondback, [crits]).
+weapon_abilities(yer, [silent, autocloak]).
+weapon_abilities(kunai, [lifesteal]).
+weapon_abilities(big_earner, [acceleration]).
+weapon_abilities(spycicle, [fire_resistance]).
+weapon_abilities(rtr, [revert]).
+weapon_abilities(cloak_and_dagger, [infinite_invisibility]).
+weapon_abilities(dead_ringer, [fake_death, invisibility]).
+
 has_weapon_ability(Weapon, Ability) :-
     weapon_abilities(Weapon, Abilities),
     member(Ability, Abilities).
