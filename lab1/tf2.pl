@@ -92,3 +92,18 @@ weapon_abilities(invisibility_watch, [invisibility]).
 has_weapon_ability(Weapon, Ability) :-
     weapon_abilities(Weapon, Abilities),
     member(Ability, Abilities).
+
+% linking classes to weapons
+class_weapons(scout, [scattergun, pistol, bat]).
+class_weapons(soldier, [rocket_launcher, shotgun, shovel]).
+class_weapons(pyro, [flamethrower, shotgun, fire_axe]).
+class_weapons(demoman, [grenade_launcher, stickybomb_launcher, bottle]).
+class_weapons(heavy, [minigun, shotgun, fists]).
+class_weapons(engineer, [shotgun, pistol, wrench]).
+class_weapons(medic, [syringe_gun, medigun, bonesaw]).
+class_weapons(sniper, [sniper_rifle, smg, kukri]).
+class_weapons(spy, [revolver, sapper, knife, invisibility_watch]).
+
+has_weapon(Class, Weapon) :-
+    class_weapons(Class, Weapons),
+    member(Weapon, Weapons).
