@@ -22,6 +22,7 @@ has_role(Class, Role) :-
 class_abilities(scout, [speed, double_jump]).
 class_abilities(soldier, [rocket_jump]).
 class_abilities(pyro, [fire_resistance]).
+class_abilities(demoman, []).
 class_abilities(heavy, [slow, big_hp]).
 class_abilities(engineer, [build_sentry, build_dispencer, build_teleport]).
 class_abilities(medic, [heal]).
