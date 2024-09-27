@@ -513,3 +513,38 @@ chosen_abilities(Class, Primary, Secondary, Melee, Misc, Abilities) :-
     % Combine the abilities and remove duplicates
     append(ClassAbilities, WeaponAbilities, AllAbilities),
     list_to_set(AllAbilities, Abilities).
+
+% find_valid_loadout/3 - Generates a valid loadout for a given class
+find_valid_loadout(Class, Abilities, Loadout) :-
+    findall(Primary, (has_weapon(Class, Primary), is_primary(Primary)), Primaries),
+    findall(Secondary, (has_weapon(Class, Secondary), is_secondary(Secondary)), Secondaries),
+    findall(Melee, (has_weapon(Class, Melee), is_melee(Melee)), Melees),
+    
+    (Class = spy -> findall(Misc, (has_weapon(Class, Misc), is_misc(Misc)), Miscs) ; Miscs = [none]),
+    
+    Primaries \= [], Secondaries \= [], Melees \= [],
+    
+    member(Primary, Primaries),
+    member(Secondary, Secondaries),
+    member(Melee, Melees),
+    member(Misc, Miscs),
+
+    Loadout = (Primary, Secondary, Melee, Misc),
+    
+    class_abilities(Class, ClassAbilities),
+    findall(Ability, (member(Weapon, [Primary, Secondary, Melee, Misc]),
+                       Weapon \= none,
+                       has_weapon_ability(Weapon, Ability)), WeaponAbilities),
+    
+    append(ClassAbilities, WeaponAbilities, AllAbilities),
+    list_to_set(AllAbilities, UniqueAbilities),
+    
+    subset(Abilities, UniqueAbilities).
+
+% find_classes_by_abilities/3 - Finds loadouts for a specified class and given abilities
+find_classes_by_abilities(Class, Abilities, Result) :-
+    (find_valid_loadout(Class, Abilities, Loadout) ->
+        Result = [Class-Loadout]
+    ;
+        false
+    ).
