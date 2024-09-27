@@ -541,10 +541,21 @@ find_valid_loadout(Class, Abilities, Loadout) :-
     
     subset(Abilities, UniqueAbilities).
 
-% find_classes_by_abilities/3 - Finds loadouts for a specified class and given abilities
+% find_classes_by_abilities/3 - Finds all loadouts for a specified class and given abilities
 find_classes_by_abilities(Class, Abilities, Result) :-
-    (find_valid_loadout(Class, Abilities, Loadout) ->
-        Result = [Class-Loadout]
-    ;
+    \+ var(Class), % force to specify class
+    findall(Loadout, find_valid_loadout(Class, Abilities, Loadout), Results),
+    (Results \= [] -> 
+        Result = Results 
+    ; 
+        false
+    ).
+
+% find_loadouts_by_abilities/2 - Finds all loadouts for any class matching the abilities
+find_loadouts_by_abilities(Abilities, Result) :-
+    findall(Class-Loadout, (class(Class), find_classes_by_abilities(Class, Abilities, Loadout)), Results),
+    (Results \= [] -> 
+        Result = Results 
+    ; 
         false
     ).
