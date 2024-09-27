@@ -484,17 +484,31 @@ has_weapon(Class, Weapon) :-
     class_weapons(Class, Weapons),
     member(Weapon, Weapons).
 
-% combined_abilities/2 predicate
-combined_abilities(Class, Abilities) :-
-    % get class-provided abilities
+% Check if a weapon is primary, secondary, melee, or misc based on the category
+is_primary(Weapon) :- has_category(Weapon, primary).
+is_secondary(Weapon) :- has_category(Weapon, secondary).
+is_melee(Weapon) :- has_category(Weapon, melee).
+is_misc(Weapon) :- has_category(Weapon, misc).
+
+% chosen_abilities/4 predicate
+chosen_abilities(Class, Primary, Secondary, Melee, Misc, Abilities) :-
+    % Check if the class is Spy
+    (Class = spy -> 
+        (is_primary(Primary), is_secondary(Secondary),
+         is_melee(Melee), is_misc(Misc)); 
+        (is_primary(Primary), is_secondary(Secondary), 
+         is_melee(Melee), Misc = none)),  % If not a spy, Misc should be none
+    % Check if the class can use the provided weapons
+    has_weapon(Class, Primary),
+    has_weapon(Class, Secondary),
+    has_weapon(Class, Melee),
+    (Class = spy -> has_weapon(Class, Misc) ; true),
+    % Get class-provided abilities
     class_abilities(Class, ClassAbilities),
-    % get all weapons the class has
-    class_weapons(Class, Weapons),
-    % collect all weapon-provided abilities
-    findall(WeaponAbilities, (member(Weapon, Weapons), weapon_abilities(Weapon, WeaponAbilities)), WeaponAbilitiesList),
-    % flatten the list of weapon abilities
-    flatten(WeaponAbilitiesList, FlattenedWeaponAbilities),
-    % combine class and weapon abilities
-    append(ClassAbilities, FlattenedWeaponAbilities, AllAbilities),
-    % remove duplicates
+    % Get weapon abilities
+    findall(Ability, (member(Weapon, [Primary, Secondary, Melee, Misc]), 
+                       Weapon \= none,
+                       has_weapon_ability(Weapon, Ability)), WeaponAbilities),
+    % Combine the abilities and remove duplicates
+    append(ClassAbilities, WeaponAbilities, AllAbilities),
     list_to_set(AllAbilities, Abilities).
