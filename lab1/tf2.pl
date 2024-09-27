@@ -107,3 +107,18 @@ class_weapons(spy, [revolver, sapper, knife, invisibility_watch]).
 has_weapon(Class, Weapon) :-
     class_weapons(Class, Weapons),
     member(Weapon, Weapons).
+
+% combined_abilities/2 predicate
+combined_abilities(Class, Abilities) :-
+    % get class-provided abilities
+    class_abilities(Class, ClassAbilities),
+    % get all weapons the class has
+    class_weapons(Class, Weapons),
+    % collect all weapon-provided abilities
+    findall(WeaponAbilities, (member(Weapon, Weapons), weapon_abilities(Weapon, WeaponAbilities)), WeaponAbilitiesList),
+    % flatten the list of weapon abilities
+    flatten(WeaponAbilitiesList, FlattenedWeaponAbilities),
+    % combine class and weapon abilities
+    append(ClassAbilities, FlattenedWeaponAbilities, AllAbilities),
+    % remove duplicates
+    list_to_set(AllAbilities, Abilities).
