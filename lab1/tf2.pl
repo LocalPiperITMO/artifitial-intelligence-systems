@@ -70,3 +70,25 @@ category(misc, [invisibility_watch]).
 has_category(Weapon, Category) :-
     category(Category, Weapons),
     member(Weapon, Weapons).
+
+% weapon-provided abilities
+weapon_abilities(scattergun, [burst_shot]).
+weapon_abilities(pistol, [low_damage]).
+weapon_abilities(bat, [low_damage]).
+weapon_abilities(rocket_launcher, [blast_damage, projectiles]).
+weapon_abilities(shotgun, [burst_shot]).
+weapon_abilities(flamethrower, [fire_damage, airblast]).
+weapon_abilities(grenade_launcher, [blast_damage, projectiles]).
+weapon_abilities(stickybomb_launcher, [blast_damage, projectiles, remote_detonation]).
+weapon_abilities(minigun, [high_speed]).
+weapon_abilities(wrench, [repair, unsap]).
+weapon_abilities(syringe_gun, [low_damage]).
+weapon_abilities(medigun, [ubercharge]).
+weapon_abilities(sniper_rifle, [zoom, charged_shot]).
+weapon_abilities(smg, [low_damage]).
+weapon_abilities(sapper, [sap]).
+weapon_abilities(invisibility_watch, [invisibility]).
+
+has_weapon_ability(Weapon, Ability) :-
+    weapon_abilities(Weapon, Abilities),
+    member(Ability, Abilities).
